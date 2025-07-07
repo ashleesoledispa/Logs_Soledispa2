@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="logs.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Paleta de colores -->
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+            <Color x:Key="SurfaceColor">#F2F2F7</Color>
+            <Color x:Key="SecondaryColor">#333333</Color>
+            <Color x:Key="PrimaryColor">#007AFF</Color>
+
+            <!-- Estilo global de página -->
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+                <Setter Property="Padding" Value="20" />
+            </Style>
+
+            <!-- Entry básico (sin CornerRadius ni Padding) -->
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+
+            <!-- Editor básico (sin CornerRadius ni Padding) -->
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+
+            <!-- Botón primario -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="24" />
+                <Setter Property="HeightRequest" Value="48" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,10" />
+            </Style>
+
+            <!-- Frame para tarjetas -->
+            <Style x:Key="CardFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource SurfaceColor}" />
+                <Setter Property="CornerRadius" Value="12" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+
+            <!-- Labels -->
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="BodyLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

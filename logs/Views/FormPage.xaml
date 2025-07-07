@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:logs.ViewModels"
+    x:Class="logs.Views.FormPage">
+
+    <!-- Asociamos el ViewModel -->
+    <ContentPage.BindingContext>
+        <vm:RecipeViewModel />
+    </ContentPage.BindingContext>
+
+    <!-- Contenido desplazable -->
+    <ScrollView>
+        <VerticalStackLayout Spacing="15">
+
+            <!-- Título de sección -->
+            <Label
+        Text="Crear nueva receta"
+        Style="{StaticResource TitleLabel}" />
+
+            <!-- Campo Nombre -->
+            <Entry
+        Placeholder="Nombre de la receta"
+        Text="{Binding Nombre}" />
+
+            <!-- Campo Ingredientes -->
+            <Editor
+        Placeholder="Ingredientes (separados por comas)"
+        Text="{Binding Ingredientes}" />
+
+            <!-- Campo Tiempo -->
+            <Entry
+        Placeholder="Tiempo de preparación (min)"
+        Keyboard="Numeric"
+        Text="{Binding TiempoPreparacionMinutos, Mode=TwoWay}" />
+
+            <!-- Switch Vegetariana -->
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label
+          Text="Vegetariana"
+          Style="{StaticResource BodyLabel}" />
+                <Switch
+          IsToggled="{Binding EsVegetariana}" />
+            </HorizontalStackLayout>
+
+            <!-- Botón Guardar -->
+            <Button
+        Text="Guardar receta"
+        Command="{Binding SaveCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
